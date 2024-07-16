@@ -15,6 +15,7 @@ const (
 	methodNotAllowed    = http.StatusMethodNotAllowed
 	badRequest          = http.StatusBadRequest
 )
+var feedback string
 
 func handleError(writer http.ResponseWriter, statusCode int, message string) {
 	// Construct the URL for the error page with query parameters
@@ -25,6 +26,7 @@ func handleError(writer http.ResponseWriter, statusCode int, message string) {
 func Request(writer http.ResponseWriter, reader *http.Request) {
 	if reader.URL.Path != "/" {
 		handleError(writer, notFound, "Page not found")
+		feedback = "This page does not exist"
 		return
 	}
 	if reader.Method != http.MethodGet {
@@ -58,6 +60,7 @@ func Post(writer http.ResponseWriter, reader *http.Request) {
 	result := asciiart.DisplayAsciiArt(characterMap, userInput)
 	if result == "" {
 		handleError(writer, badRequest, "Bad Request")
+		feedback = "The Input must NOT contain non-ascii charcters"
 		fmt.Println("Character not found")
 		return
 	}
@@ -79,7 +82,7 @@ func ErrorHandler(writer http.ResponseWriter, reader *http.Request) {
 	}
 	message := reader.URL.Query().Get("message")
 
-	err = errorTmpl.Execute(writer, Data{ErrorMessage: message, StatusCode: statusCode})
+	err = errorTmpl.Execute(writer, Data{ErrorMessage: message, StatusCode: statusCode, Feedback: feedback})
 	if err != nil {
 		http.Error(writer, "Error rendering error page", http.StatusInternalServerError)
 		fmt.Printf("Error executing error template: %s\n", err)

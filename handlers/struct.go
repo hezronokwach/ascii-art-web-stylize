@@ -6,4 +6,5 @@ type Data struct {
 	UserInput    string
 	StatusCode   int
 	ErrorMessage string
+	Feedback string
 }
