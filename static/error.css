@@ -26,4 +26,10 @@
 
         }
 
+        .error-message h1 {
+            color: gray; /* Red color for status code */
+            margin: 0;
+            font-size: 300px;
+        }
+
         
