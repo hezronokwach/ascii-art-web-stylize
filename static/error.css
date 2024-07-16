@@ -32,4 +32,10 @@
             font-size: 300px;
         }
 
-        
+        .error-message p {
+            color: #555; /* Darker gray for error message */
+            margin: 10px 0;
+            font-size: 50px;
+        }
+
+       
