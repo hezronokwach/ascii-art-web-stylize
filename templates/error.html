@@ -4,16 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /* background-image: url('https://i.pinimg.com/564x/25/7a/bb/257abbb7e0ed8492acfcec9bcad064b5.jpg'); */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Glassy white background with transparency */
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333; /* Dark text color */
+            margin-bottom: 20px;
+            font-size: 50px;
+
+        }
+
+        .error-message h1 {
+            color: gray; /* Red color for status code */
+            margin: 0;
+            font-size: 300px;
+        }
+
+        .error-message p {
+            color: #555; /* Darker gray for error message */
+            margin: 10px 0;
+            font-size: 50px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: gray; /* Darker blue on hover */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h2>Error</h2>
         <div class="error-message">
-            <h3>{{.StatusCode}}</h3>
+            <h1>{{.StatusCode}}</h1>
             <p>{{.ErrorMessage}}</p>
+            <h4>{{.Feedback}}</h4>
+
         </div>
         <a href="/">Go back to home</a>
+
     </div>
 </body>
 </html>
