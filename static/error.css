@@ -9,4 +9,14 @@
             margin: 0;
         }
 
+        .container {
+            background: rgba(255, 255, 255, 0.8); /* Glassy white background with transparency */
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
         
