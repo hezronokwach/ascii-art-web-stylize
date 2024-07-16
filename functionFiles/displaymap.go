@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-/* 
+/*
 DisplayAsciiArt generates ASCII art from a given character map and input string. It:
 1. Replaces CR with "\\n" and splits the input into lines.
 2. Iterates through each line, using the map to convert characters to ASCII art.

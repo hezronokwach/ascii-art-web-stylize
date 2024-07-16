@@ -13,13 +13,15 @@ const (
 	methodNotAllowed    = http.StatusMethodNotAllowed
 	badRequest          = http.StatusBadRequest
 )
-/* 
+
+/*
 handleError simplifies sending HTTP error responses with formatted messages.
 */
 func handleError(writer http.ResponseWriter, statusCode int, message string) {
 	http.Error(writer, fmt.Sprintf("%d %s", statusCode, message), statusCode)
 }
-/* 
+
+/*
 Request handles the GET request for the root path by loading and executing the main template.
 */
 func Request(writer http.ResponseWriter, reader *http.Request) {
@@ -36,7 +38,7 @@ func Request(writer http.ResponseWriter, reader *http.Request) {
 	fmt.Println("GET / - 200 OK") // Log success in the terminal
 }
 
-/* 
+/*
 Post handles the POST request to '/ascii-art' by creating ASCII art based on user input and selected banner.
 */
 func Post(writer http.ResponseWriter, reader *http.Request) {

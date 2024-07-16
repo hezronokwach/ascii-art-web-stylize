@@ -4,8 +4,9 @@ import (
 	"os"
 	"testing"
 )
-/* 
-TestReadMap evaluates the CreateMap function by creating a temporary file with ASCII art content, 
+
+/*
+TestReadMap evaluates the CreateMap function by creating a temporary file with ASCII art content,
 and verifying if CreateMap accurately parses this content into a character map. This test checks the correctness
 of the output map in terms of size, key presence, and line accuracy against expected values.
 */
