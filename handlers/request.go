@@ -3,6 +3,8 @@ package handlers
 import (
 	"fmt"
 	"net/http"
+	"net/url"
+	"strconv"
 
 	asciiart "asciiart/functionFiles"
 )
@@ -14,16 +16,12 @@ const (
 	badRequest          = http.StatusBadRequest
 )
 
-/*
-handleError simplifies sending HTTP error responses with formatted messages.
-*/
 func handleError(writer http.ResponseWriter, statusCode int, message string) {
-	http.Error(writer, fmt.Sprintf("%d %s", statusCode, message), statusCode)
+	// Construct the URL for the error page with query parameters
+	target := fmt.Sprintf("/error?code=%d&message=%s", statusCode, url.QueryEscape(message))
+	http.Redirect(writer, &http.Request{URL: &url.URL{Path: target}}, target, http.StatusSeeOther)
 }
 
-/*
-Request handles the GET request for the root path by loading and executing the main template.
-*/
 func Request(writer http.ResponseWriter, reader *http.Request) {
 	if reader.URL.Path != "/" {
 		handleError(writer, notFound, "Page not found")
@@ -33,14 +31,15 @@ func Request(writer http.ResponseWriter, reader *http.Request) {
 		handleError(writer, methodNotAllowed, "Method not allowed")
 		return
 	}
-	temp := GetTemplate()
-	temp.Execute(writer, Data{Success: false})
+	tmpl := GetTemplate()
+	err := tmpl.Execute(writer, Data{Success: false})
+	if err != nil {
+		handleError(writer, internalServerError, "Internal Server Error")
+		fmt.Printf("Error executing template: %s\n", err)
+	}
 	fmt.Println("GET / - 200 OK") // Log success in the terminal
 }
 
-/*
-Post handles the POST request to '/ascii-art' by creating ASCII art based on user input and selected banner.
-*/
 func Post(writer http.ResponseWriter, reader *http.Request) {
 	if reader.Method != http.MethodPost {
 		handleError(writer, methodNotAllowed, "Method not allowed")
@@ -63,7 +62,26 @@ func Post(writer http.ResponseWriter, reader *http.Request) {
 		return
 	}
 
-	temp := GetTemplate()
-	temp.Execute(writer, Data{Success: true, Result: result, UserInput: userInput})
+	tmpl := GetTemplate()
+	err = tmpl.Execute(writer, Data{Success: true, UserInput: userInput, Result: result})
+	if err != nil {
+		handleError(writer, internalServerError, "Internal Server Error")
+		fmt.Printf("Error executing template: %s\n", err)
+	}
 	fmt.Println("POST /ascii-art - 200 OK ") // Log success with input data
+}
+
+func ErrorHandler(writer http.ResponseWriter, reader *http.Request) {
+	statusCodeStr := reader.URL.Query().Get("code")
+	statusCode, err := strconv.Atoi(statusCodeStr)
+	if err != nil {
+		statusCode = http.StatusInternalServerError
+	}
+	message := reader.URL.Query().Get("message")
+
+	err = errorTmpl.Execute(writer, Data{ErrorMessage: message, StatusCode: statusCode})
+	if err != nil {
+		http.Error(writer, "Error rendering error page", http.StatusInternalServerError)
+		fmt.Printf("Error executing error template: %s\n", err)
+	}
 }
