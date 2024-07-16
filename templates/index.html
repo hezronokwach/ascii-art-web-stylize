@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ascii</title>
+        <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            color: #444;
+            margin-top: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            
+            display: inline-block;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: left;
+            width: 80%;
+            max-width: 500px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        </style>
+    </head>
+    <body>
+        <h2>ASCII ART GENERATOR</h2>
+        <form method="POST" action="/ascii-art">
+            <textarea  name="text" placeholder="Enter string" rows="10"
+                cols="40" required >{{.UserInput}}</textarea><br>
+            <select name="banner">
+                <option value="standard">standard</option>
+                <option value="shadow">shadow</option>
+                <option value="thinkertoy">thinkertoy</option>
+            </select>
+            <button type="submit">Generate</button>
+        </form>
+        {{if .Success}}
+        <h3>Processed ASCII Art:</h3>
+        <pre>{{.Result}}</pre>
+        {{end}}
+    </body>
+</html>
