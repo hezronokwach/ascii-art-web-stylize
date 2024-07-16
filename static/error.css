@@ -38,4 +38,17 @@
             font-size: 50px;
         }
 
-       
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: gray; /* Darker blue on hover */
+        }
