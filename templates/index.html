@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ascii</title>
         <link rel="stylesheet" href="/static/style.css">
     </head>
@@ -19,9 +20,11 @@
             </select><br>
             <button type="submit">Generate</button>
         </form>
+        <div id="result-container">
         {{if .Success}}
         <h3>Processed ASCII Art:</h3>
         <pre>{{.Result}}</pre>
         {{end}}
+        </div>
     </body>
 </html>
