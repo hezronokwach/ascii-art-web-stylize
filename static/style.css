@@ -74,9 +74,17 @@ button[type="submit"]:hover {
 h3 {
    color:#333;
 }
-
+#result-container {
+   max-width: 500px;
+   max-height: 300px;
+   margin :20px auto;
+   border-radius: 8px;
+   overflow-y: auto;
+   overflow-x: auto;
+}
 pre {
    color: #000000;
    font-weight: bold;
 }
+
 
