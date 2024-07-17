@@ -55,7 +55,7 @@ Ascii-art-stylize is aimed at enhancing the ascii--art-web project by making it 
 
 ## ascii-art Page
 
-![homepage](/static/image/result.jpg)
+![homepage](/static/image/result.jpg) 
 
 ## Error Page
 
