@@ -64,6 +64,12 @@ body, html {
    -webkit-box-shadow: none; /* Safari and Chrome */
    -moz-box-shadow: none; /* Firefox */
  }
+ textarea::placeholder {
+   color: black;
+   font-style: italic;
+
+}
+
  
  textarea:focus {
    border-color: #ccc; /* Ensure the border color remains the same on focus */
