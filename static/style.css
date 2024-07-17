@@ -1,58 +1,82 @@
 
 body {
    font-family: Arial, sans-serif;
-   background-color: #f0f0f0;
-   color: #333;
-   text-align: center;
+   background-color: #D3D3D3; 
    margin: 0;
    padding: 0;
+   display:flex;
+   min-height: 100vh;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
 }
 h2 {
-   color: #444;
+   color: #333399;
+   margin-top: 10px;
+   padding-top: 40px;
+}
+
+form {
+   max-width: 600px;
+   background: linear-gradient(to bottom right, #ffffff, #e0e0ff);
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    margin-top: 20px;
 }
-form {
-   background-color: #fff;
-   border-radius: 8px;
-   
-   display: inline-block;
-   margin: 20px auto;
-   padding: 20px;
-   text-align: left;
-   width: 80%;
-   max-width: 500px;
-}
+
+
 textarea {
+   width: 90%;
+   height: 150px; /* Initial height */
+   resize: none; /* Allow vertical resizing */
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 14px;
+   color: #333;
+   background-color: #f9f9f9;
+   transition: height 0.3s; /* Smooth transition for height change */
+}
+
+textarea:focus {
+   outline: none; /* Remove focus outline */
+   border-color: #666; /* Darker border color when focused */
+}
+
+select {
+   width: 100%;
+   padding: 8px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 14px;
+   color: #333;
+   background-color: #f9f9f9;
+   margin-bottom: 10px;
+}
+
+button[type="submit"] {
+   display: block;
    width: 100%;
    padding: 10px;
-   border-radius: 4px;
-   border: 1px solid #ccc;
-   margin-bottom: 10px;
-   font-size: 14px;
-}
-select, button {
-   width: 100%;
-   padding: 10px;
-   border-radius: 4px;
-   border: 1px solid #ccc;
-   margin-bottom: 10px;
-   font-size: 14px;
-}
-button {
-   background-color: #5cb85c;
-   color: white;
    border: none;
+   border-radius: 4px;
+   font-size: 16px;
+   color: #ffffff; 
+   background-color: #3366cc; 
+   cursor: pointer;
+   transition: background-color 0.3s;
 }
-button:hover {
-   background-color: #4cae4c;
+
+button[type="submit"]:hover {
+   background-color: #0044cc;
 }
 h3 {
-   margin-top: 20px;
+   color:#333;
 }
+
 pre {
-   background-color: #eee;
-   padding: 10px;
-   border-radius: 4px;
-   text-align: left;
-   display: inline-block;
+   color: #000000;
+   font-weight: bold;
 }
+
