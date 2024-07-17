@@ -6,7 +6,7 @@ body, html {
    font-family: 'Poppins', sans-serif;
    color: #fff;
    text-align: center;
-   background: url('/static/image/back.jpg') no-repeat center center fixed; 
+   background: url('/static/image/background.jpg') no-repeat center center fixed; 
    background-size: cover;
    position: relative;
  }
@@ -63,6 +63,12 @@ body, html {
    -webkit-box-shadow: none; /* Safari and Chrome */
    -moz-box-shadow: none; /* Firefox */
  }
+ textarea::placeholder {
+   color: black;
+   font-style: italic;
+
+}
+
  
  textarea:focus {
    border-color: #ccc; /* Ensure the border color remains the same on focus */
