@@ -1,58 +1,135 @@
-
-body {
-   font-family: Arial, sans-serif;
-   background-color: #f0f0f0;
-   color: #333;
-   text-align: center;
+/* General body styling */
+body, html {
    margin: 0;
    padding: 0;
-}
-h2 {
-   color: #444;
-   margin-top: 20px;
-}
-form {
-   background-color: #fff;
+   height: 100%;
+   font-family: 'Poppins', sans-serif;
+   color: #fff;
+   text-align: center;
+   background: url('/static/image/back.jpg') no-repeat center center fixed; 
+   background-size: cover;
+   position: relative;
+ }
+ 
+ /****** Overlay styling ******/
+ .overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ /****** Content styling ******/
+ .content {
+   text-align: center;
+   max-width: 600px;
+   margin: auto;
+ }
+ 
+ /****** Heading styling ******/
+ h2 {
+   font-size: 2em;
+   margin-bottom: 20px;
+   font-weight: 600;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+   color: #c4f7f1; /* Text shadow for better readability */
+ }
+ 
+ /****** Form styling ******/
+ form {
+   background-color: rgba(0, 0, 0, 0.3); /* Dimmed semi-transparent black background */
    border-radius: 8px;
-   
-   display: inline-block;
-   margin: 20px auto;
    padding: 20px;
-   text-align: left;
-   width: 80%;
+   margin: 20px auto;
+   width: 100%;
    max-width: 500px;
-}
-textarea {
+ }
+ 
+ textarea {
+   width: 90%;
+   padding: 10px;
+   border-radius: 4px;
+   border: 1px solid #ccc;
+   margin-bottom: 10px;
+   font-size: 16px;
+   font-family: 'Courier New', Courier, monospace;
+   background-color: rgba(255, 255, 255, 0.5); /* Dimmed light background for textarea */
+   color: #000;
+   resize: none; /* Disable resizing */
+   box-shadow: none; /* Remove any box-shadow */
+   -webkit-box-shadow: none; /* Safari and Chrome */
+   -moz-box-shadow: none; /* Firefox */
+ }
+ 
+ textarea:focus {
+   border-color: #ccc; /* Ensure the border color remains the same on focus */
+   outline: none; /* Remove default outline */
+ }
+ 
+ select, button {
    width: 100%;
    padding: 10px;
    border-radius: 4px;
    border: 1px solid #ccc;
    margin-bottom: 10px;
-   font-size: 14px;
-}
-select, button {
-   width: 100%;
-   padding: 10px;
-   border-radius: 4px;
-   border: 1px solid #ccc;
-   margin-bottom: 10px;
-   font-size: 14px;
-}
-button {
-   background-color: #5cb85c;
+   font-size: 16px;
+   background-color: rgba(255, 255, 255, 0.5); /* Dimmed light background for inputs */
+   color: #000;
+ }
+ 
+ button {
+   background-color: #13917c; /* Primary color */
    color: white;
    border: none;
-}
-button:hover {
-   background-color: #4cae4c;
-}
-h3 {
-   margin-top: 20px;
-}
-pre {
-   background-color: #eee;
-   padding: 10px;
-   border-radius: 4px;
-   text-align: left;
-   display: inline-block;
-}
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+ 
+ button:hover {
+   background-color: #0a443a; /* Hover color */
+ }
+ 
+ /****** Result section styling ******/
+ #result-container {
+   max-width: 1000px; /* Match the width of the form */
+   max-height: 500px; /* Set a maximum height */
+   margin: 20px auto; /* Center below the form */
+   padding: 20px;
+   border-radius: 8px;
+   overflow-x: auto; /* Enable horizontal scroll */
+   overflow-y: auto; /* Enable vertical scroll */
+   color: #c4f7f1; /* Text color */
+ }
+ 
+ h3, h4 {
+   text-align: center;
+   font-weight: 600;
+   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+   color: #c4f7f1; /* Text shadow for better readability */
+ }
+ 
+ pre {
+   white-space: pre;
+   word-wrap: normal;
+   text-align: center;
+   font-weight: bold; /* Make the text bold */
+   color: #c4f7f1; /* Text color */
+ }
+ 
+ /****** Responsive design ******/
+ @media (max-width: 600px) {
+   h2 {
+     font-size: 2em;
+   }
+   form {
+     width: 90%;
+   }
+   #result-container {
+     width: 90%;
+   }
+ }
+ 
