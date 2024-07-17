@@ -8,13 +8,15 @@
     <body>
         <h2>ASCII ART GENERATOR</h2>
         <form method="POST" action="/ascii-art">
-            <textarea  name="text" placeholder="Enter string" rows="10"
+            <p>Text</p>
+            <textarea  name="text" placeholder="Input text" rows="10"
                 cols="40" required >{{.UserInput}}</textarea><br>
+                <p>Select Banner</p>
             <select name="banner">
                 <option value="standard">standard</option>
                 <option value="shadow">shadow</option>
                 <option value="thinkertoy">thinkertoy</option>
-            </select>
+            </select><br>
             <button type="submit">Generate</button>
         </form>
         {{if .Success}}
