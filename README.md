@@ -1,10 +1,7 @@
 # ASCII Art Web Server
-![](https://www.parallels.com/blogs/ras/app/uploads/2022/02/Best-Practices-for-Server-Performance-Monitoring.jpg)
-
+![](https://i.pinimg.com/564x/85/a6/79/85a679708773626668b05522c8b0d21d.jpg)
 ## Description
-
-This Go web application serves as an ASCII art generator. Users can input text and select a banner style, then the server processes this input to generate ASCII art. The application is built with the Go programming language and uses HTML templates for rendering web pages.
-
+Ascii-art-stylize is aimed at enhancing the ascii--art-web project by making it more visually appealing, interactive,responsive and intuitive, while also improving user-friendliness and feedback mechanisms.
 ## Authors
 - [Hezron Okwach](https://github.com/hezronokwach) 
 - [Anne Maina](https://github.com/nyagooh)
@@ -34,19 +31,41 @@ This Go web application serves as an ASCII art generator. Users can input text a
 
 ## Implementation Details
 
-### Endpoints
-
-  GET /: Serves the main page where users can input text and choose a banner style.
-
-  POST /submit: Receives data from the form on the main page (text and a selected banner), generates ASCII art based on the input, and returns the result on the page.
-
 ### Features
+   - Visual Appeal: Incorporate visually striking ASCII art elements to captivate users.
 
+   - Interactivity: Implement interactive ASCII art features for engaging user experiences.
+
+   -  User-Friendliness: Optimize navigation and provide clear feedback for intuitive usage.
+
+   - Responsiveness: Ensure seamless adaptation across various devices and screen sizes.
+
+   - Error Handling: Display an error page for user input errors, ensuring clarity and guidance.
+   
    Text Input: Users can enter the text they want to convert to ASCII art. The text must be ascii characters otherwise they will encounter bad request error message.
     Banner Selection: Users can select the desired ASCII art style via a select dropdown i.e standard, shadow, thinkertoy.
 
    Dynamic Results Display: The results of the ASCII art generation are displayed on the main page after the POST request, without needing to navigate to a new page.
 
+   # Pages
+
+  ## Home Page
+  ![homepage](/static/image/home.jpg)
+
+
+## ascii-art Page
+
+![homepage](/static/image/result.jpg)
+
+## Error Page
+
+![homepage](/static/image/error.jpg)
+
+### Endpoints
+
+  GET /: Serves the main page where users can input text and choose a banner style.
+
+  POST /submit: Receives data from the form on the main page (text and a selected banner), generates ASCII art based on the input, and returns the result on the page.
   ### Algorithm
 
 The ASCII art generation algorithm involves several key steps, from receiving user input to processing it into ASCII art. Here’s a detailed breakdown:
@@ -57,7 +76,7 @@ The ASCII art generation algorithm involves several key steps, from receiving us
 
 2. **Form Validation**:
    - When the server receives the `POST` request, it first validates the input to ensure that the text is not empty and that the selected banner is one of the predefined options.
-   - If the validation fails, the server responds with a `400 Bad Request` status code, and the user is prompted to correct their input.
+   - If the validation fails, the server responds with a `400 Bad Request` status code, and the user is prompted to input ascii characters only.
 
 3. **Processing the Input**:
    - If the input passes validation, the server uses the selected banner style to retrieve a corresponding character map. Each banner style has a different set of character designs for representing text.
@@ -85,6 +104,7 @@ The ASCII art generation algorithm involves several key steps, from receiving us
 
 - **Go**: Primary programming language for server-side logic.
 - **HTML Templates**: Used for rendering the user interface.
+- **CSS** : used for styling visually appealing, interactive,responsive and intuitive websites
 - **Net/HTTP Package**: Used for handling HTTP requests and responses.
 
 ## Contributing
