@@ -53,6 +53,7 @@ func Post(writer http.ResponseWriter, reader *http.Request) {
 	characterMap, err := asciiart.CreateMap(banner)
 	if err != nil {
 		handleError(writer, internalServerError, "Internal Server Error")
+		feedback = fmt.Sprintf("Error loading %s banner file", banner)
 		fmt.Printf("Error creating map: %s\n", err)
 		return
 	}
