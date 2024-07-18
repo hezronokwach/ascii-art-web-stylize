@@ -15,6 +15,7 @@ const (
 	methodNotAllowed    = http.StatusMethodNotAllowed
 	badRequest          = http.StatusBadRequest
 )
+
 var feedback string
 
 func handleError(writer http.ResponseWriter, statusCode int, message string) {
