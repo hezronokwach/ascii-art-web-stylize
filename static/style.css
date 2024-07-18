@@ -1,15 +1,18 @@
 /* General body styling */
 body, html {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   font-family: Arial, sans-serif;
-   color: #fff;
-   text-align: center;
-   background: url('/static/image/background.jpg') no-repeat center center fixed; 
-   background-size: cover;
-   position: relative;
- }
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  background: url('/static/image/background.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
  
  /****** Overlay styling ******/
  .overlay {
