@@ -4,13 +4,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Use 100vh to make sure the height covers the viewport height */
     margin: 0;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.8); /* Glassy white background with transparency */
-    padding: 60px;
+    padding: 40px; /* Adjust padding to fit the content better */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
     max-width: 600px;
@@ -20,14 +20,16 @@ body {
 
 h2 {
     color: #333; /* Dark text color */
-    margin-bottom: 20px;
-    font-size: 2em;
+    font-size: 5em; /* Adjust font size to fit the content better */
+    padding: 1px;
 }
 
-.error-message h1 {
-    color: gray; /* Gray color for status code */
-    margin: 0;
-    font-size: 10em;
+.image1 img {
+    width: 80%; /* Make the image responsive */
+    max-width: 600px; /* Limit the maximum width */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners to match container style */
 }
 
 .error-message p {
@@ -54,21 +56,17 @@ a {
 }
 
 a:hover {
-    background-color: #0a443a; /* Darker background on hover */
+    background-color: gray; /* Darker background on hover */
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
-        padding: 40px;
+        padding: 30px; /* Adjust padding to fit the content better */
     }
 
     h2 {
-        font-size: 1.5em;
-    }
-
-    .error-message h1 {
-        font-size: 6em;
+        font-size: 3em; /* Adjust font size to fit the content better */
     }
 
     .error-message p {
@@ -82,15 +80,15 @@ a:hover {
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px;
+        padding: 20px; /* Adjust padding to fit the content better */
     }
 
     h2 {
-        font-size: 2em;
+        font-size: 2em; /* Adjust font size to fit the content better */
     }
 
-    .error-message h1 {
-        font-size: 3em;
+    .error-message img {
+        width: 90%; /* Adjust image width for smaller screens */
     }
 
     .error-message p {
