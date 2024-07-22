@@ -55,11 +55,27 @@ Ascii-art-stylize is aimed at enhancing the ascii--art-web project by making it 
 
 ## ascii-art Page
 
-![homepage](/static/image/result.jpg) 
+ ![homepage](/static/image/result.jpg) 
 
 ## Error Page
 
 ![homepage](/static/image/error.jpg)
+
+### Website Responsiveness
+
+**iPhone Landscape:**
+
+![hom](static/image/Iphone6-8_landscape.jpg)
+
+**Android Potrait:**
+
+![Android Landscape](static/image/Android-potrait.jpg)
+
+**iPad Portrait:**
+
+![iPad Portrait](/static/image/Ipad-potrait.jpg)
+
+
 
 ### Endpoints
 
