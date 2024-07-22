@@ -1,54 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use 100vh to make sure the height covers the viewport height */
+    margin: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Light gray background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Glassy white background with transparency */
+    padding: 40px; /* Adjust padding to fit the content better */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
 
-        .container {
-            background: rgba(255, 255, 255, 0.8); /* Glassy white background with transparency */
-            padding: 60px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-        }
+h2 {
+    color: #333; /* Dark text color */
+    font-size: 5em; /* Adjust font size to fit the content better */
+    padding: 1px;
+}
 
-        h2 {
-            color: #333; /* Dark text color */
-            margin-bottom: 20px;
-            font-size: 50px;
+.image1 img {
+    width: 80%; /* Make the image responsive */
+    max-width: 600px; /* Limit the maximum width */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners to match container style */
+}
 
-        }
+.error-message p {
+    color: #555; /* Darker gray for error message */
+    margin: 10px 0;
+    font-size: 1.5em;
+}
 
-        .error-message h1 {
-            color: gray; /* Red color for status code */
-            margin: 0;
-            font-size: 300px;
-        }
+.error-message h4 {
+    color: #555; /* Darker gray for feedback message */
+    margin: 10px 0;
+    font-size: 1.2em;
+}
 
-        .error-message p {
-            color: #555; /* Darker gray for error message */
-            margin: 10px 0;
-            font-size: 50px;
-        }
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #13917c; /* Primary background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #13917c; /* Blue background */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+a:hover {
+    background-color: gray; /* Darker background on hover */
+}
 
-        a:hover {
-            background-color: gray; /* Darker blue on hover */
-        }
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px; /* Adjust padding to fit the content better */
+    }
+
+    h2 {
+        font-size: 3em; /* Adjust font size to fit the content better */
+    }
+
+    .error-message p {
+        font-size: 1.2em;
+    }
+
+    .error-message h4 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px; /* Adjust padding to fit the content better */
+    }
+
+    h2 {
+        font-size: 2em; /* Adjust font size to fit the content better */
+    }
+
+    .error-message img {
+        width: 90%; /* Adjust image width for smaller screens */
+    }
+
+    .error-message p {
+        font-size: 1em;
+    }
+
+    .error-message h4 {
+        font-size: 0.8em;
+    }
+
+    a {
+        padding: 8px 16px;
+    }
+}
