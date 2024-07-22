@@ -17,8 +17,8 @@ Ascii-art-stylize is aimed at enhancing the ascii--art-web project by making it 
 
 1. Clone the repository:
    ```bash
-   git clone https://learn.zone01kisumu.ke/git/hokwach/ascii-art-web
-   cd ascii-art-web
+   git clone https://learn.zone01kisumu.ke/git/hokwach/ascii-art-web-stylize
+   cd ascii-art-web-stylize
    ```
 2. Run the server:
    ```bash
@@ -59,7 +59,7 @@ Ascii-art-stylize is aimed at enhancing the ascii--art-web project by making it 
 
 ## Error Page
 
-![homepage](/static/image/error.jpg)
+![homepage](/static/image/errorPage.jpg)
 
 ### Website Responsiveness
 
