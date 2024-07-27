@@ -109,7 +109,7 @@ h3, h4 {
 }
 
 pre {
-  white-space: pre-wrap; /* Handle long text without overflow */
+  white-space: pre; /* Handle long text without overflow */
   word-wrap: break-word; /* Ensure long words break correctly */
   text-align: center;
   font-weight: bold; /* Make the text bold */
